@@ -1,0 +1,323 @@
+/*Dark Mode*/
+/*@media (prefers-color-scheme: dark) {
+    html {
+        background-color: rgb(24, 0, 0);
+        background-image: url(../assets/images/background/homegrain.webp);
+    }
+
+    th, td, tfoot a {
+        color: white;
+    }
+
+    tfoot img {
+        filter: invert();
+    }
+
+    td {
+        border-bottom: 1.5pt white solid;
+    }
+    
+    /*Bug Fix - Necessary for Safari on all devices*/
+    /*tbody tr td {
+        border-top: 1.5pt white solid;
+    }
+
+    tr.row:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+}*/
+
+/*Light Mode*/
+/*@media (prefers-color-scheme: light) {
+    html {
+        background-color: white;
+    }
+
+    th, td, tfoot a {
+        color: black;
+    }
+
+    td {
+        border-bottom: 1.5pt black solid;
+    }
+    
+    /*Bug Fix - Necessary for Safari on all devices*/
+  /*  tbody tr td {
+        border-top: 1.5pt black solid;
+    }
+
+    tr.row:hover {
+        background: rgba(0, 0, 0, 0.1);
+    }
+    
+}*/
+
+/*Light Mode*/
+th.light-mode, td.light-mode, tfoot a.light-mode {
+    color: black;
+}
+
+tbody td.light-mode {
+    border-bottom: 1.5pt black solid;
+}
+
+tbody tr td.light-mode {
+    border-top: 1.5pt black solid;
+}
+
+tbody tr.light-mode:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+#star.light-mode {
+    filter: none;
+}
+
+/*Dark Mode*/
+th.dark-mode, td.dark-mode, tfoot a.dark-mode {
+    color: white;
+}
+
+tbody td.dark-mode {
+    border-bottom: 1.5pt white solid;
+}
+
+tbody tr td.dark-mode {
+    border-top: 1.5pt white solid;
+}
+
+tbody tr.dark-mode:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#star.dark-mode {
+    filter: invert();
+}
+
+/*Responsive Design*/
+
+/*Mobile*/
+@media screen and (max-width: 767px) {
+    /*Add centralisation on non-limited-height*/
+    @media screen and (min-height:575px) {
+        article {
+            top: 50vh;
+            transform: translateY(-50%);
+        }
+    }
+    #image {
+        display: none;
+    }
+    
+    /*Table takes up whole viewport*/
+    section:nth-child(2) {
+        width: 100%;
+    }
+
+    /*Margins*/
+    article {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+   /*Table Font Resizing*/
+    thead th{
+        font-size: 2rem;
+    }
+
+    td, tfoot{
+        font-size: 1rem;
+    }
+
+    .back img {
+        align-self: center;
+        margin-right: 0.5rem;
+    }
+
+    .back p {
+        align-self: baseline;
+        line-height: 2rem;
+    }
+
+    @supports (-webkit-text-size-adjust:none) and (not (-ms-ime-align:auto)) and (not (-moz-appearance:none)) {
+        .flexbox img {
+            align-self: center;
+            padding-top: 4pt;
+        }
+    }
+
+    /*WebKit Browsers*/
+    @supports (-webkit-appearance:none) {
+        .flexbox img {
+            padding-bottom: 5pt;
+        }
+    }
+}
+
+/*Tablet*/
+@media screen and (min-width: 768px) and (max-width: 1180px) {
+    /*Add centralisation on non-limited-height*/
+    @media screen and (min-height:740px) {
+        article {
+            top: 50vh;
+            transform: translateY(-50%);
+        }
+    }
+    /*Hide images on mobile*/
+    #image {
+        display: none;
+    }
+    
+    /*Table takes up whole viewport*/
+    section:nth-child(2) {
+        width: 100%;
+    }
+
+    /*Margins*/
+   article {
+    margin-left: 3rem;
+    margin-right: 3rem;
+   }
+
+    /*Table Font Resizing*/
+    thead th {
+        font-size: 3rem;
+    }
+
+    td, tfoot{
+        font-size: 1.5rem;
+    }
+}
+
+/*Desktop*/
+@media screen and (min-width: 1181px) {
+    /*Add centralisation on non-limited-height*/
+    @media screen and (min-height:800px) {
+        article {
+            top: 50vh;
+            transform: translateY(-50%);
+        }
+    }
+    /*Margins*/
+    article {
+        margin-left: 4.5rem;
+        margin-right: 4.5rem;
+    }
+
+    /*Show images on desktop*/
+    #image {
+        background-color: #f9f1ee;
+        opacity: 1;
+        min-width: 400px;
+        width: calc(50vw - 4rem);
+        overflow-x: hidden;
+        flex-direction: column;
+    }
+    
+    section:nth-child(2) {
+        margin-left: 4.5rem;
+        flex-grow: 1;
+        flex-direction: column;
+        
+    }
+
+    /*Image appears on hover*/
+    .back p:hover ~ img {
+        visibility: visible;
+    }
+
+    .back img  {
+        visibility: hidden;
+    }
+
+    /*Table Font Resizing*/
+    thead th {
+        font-size: 3rem;
+    }
+
+    td, tfoot{
+        font-size: 1.5rem;
+    }
+}
+
+
+/*Flexbox Properties*/
+
+article {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+/*Table Properties*/
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead {
+    text-align: left;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+thead th {
+    padding-bottom: 1rem;
+    font-family: playfair-display, serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+tbody tr {
+    cursor: pointer;
+}
+
+td {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+td:nth-child(1) {
+    font-family: playfair-display, serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+td:nth-child(2) {
+    width: 5rem;
+    text-align: right;
+    font-family: pt-sans, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+tfoot th{
+    margin-top: 1rem;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/*Back Button*/
+.back {
+    align-items: center;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    direction: rtl;
+    margin-top: 1rem;
+}
+
+.back img {
+    margin-right: 0.5rem;
+}
+
+.back p {
+    font-family: playfair-display, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
