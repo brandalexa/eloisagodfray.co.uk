@@ -1,0 +1,90 @@
+@import url("https://use.typekit.net/fla6nuv.css");
+
+body {
+    font-family: pt-sans, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*Dark/Light Mode Toggle*/
+nav ul li img.dark-mode, img#light-icon.dark-mode, img#dark-icon.dark-mode {
+    filter: invert();
+}
+
+nav ul li img.light-mode, img#light-icon.light-mode, img#dark-icon.light-mode {
+    filter: none;
+}
+
+nav a.light-mode {
+    color: black;
+}
+
+nav a.dark-mode { 
+    color: white;
+}
+
+/*Navigation for Homepage and Work page*/
+nav {
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    position: fixed;
+    padding: 1rem;
+}
+
+nav ul li {
+    display: inline;
+    float: right;
+    font-family: playfair-display, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/*Colour Toggle*/
+.colour-mode {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-right: 0.5rem;
+    height: 1.25rem;
+    column-gap: 4px;
+}
+
+.colour-mode:nth-child(1) img, .colour-mode:nth-child(3) img{
+    height: 1.25rem;
+}
+
+.colour-mode button {
+    height: 1.6rem;
+    width: 2.68rem;
+    background: none;
+    cursor: pointer;
+}
+
+.colour-mode img#toggle-image {
+    height: 100%;
+}
+
+
+/*Temporary solution to font sizes*/
+
+nav ul li {
+    font-size: 1.25rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+ nav ul li a {
+    text-decoration: none;
+}
+
+/*Dark Mode*/
+html.dark-mode {
+    background-color: rgb(6, 15, 23);
+}
+
+/*Light Mode*/
+html.light-mode {
+    background-color: rgb(248, 244, 255);
+}
