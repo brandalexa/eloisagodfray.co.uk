@@ -21,7 +21,7 @@ function getCookie(cname) {
 }
 
 function changeIcon(mode) {
-    document.getElementById("toggle-image").setAttribute("src", "/assets/images/icons/toggle-".concat(mode).concat(".svg"));
+    document.getElementById("toggle-image").setAttribute("src", "../assets/images/icons/toggle-".concat(mode).concat(".svg"));
 }
 
 function toggleAll(mode) {

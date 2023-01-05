@@ -6,7 +6,7 @@ function hideImage() {
 
 function showImage(id) {
     let img = document.getElementById("image");
-    img.setAttribute("src", "/assets/images/hover/hover_".concat(id).concat(".webp"));
+    img.setAttribute("src", "../assets/images/hover/hover_".concat(id).concat(".webp"));
     img.style.opacity = "1";
 
 }

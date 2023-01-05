@@ -1,7 +1,7 @@
 /*Light/Dark Mode*/
 /*Light Mode*/
 body.light-mode {
-    background: url(/assets/images/background/eg-light.svg);
+    background: url(../images/background/eg-light.svg);
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -16,7 +16,7 @@ html.light-mode, p.light-mode, a.light-mode {
 
 /*Dark Mode*/
 body.dark-mode {
-    background: url(/assets/images/background/eg-dark.svg);
+    background: url(../images/background/eg-dark.svg);
     background-position: center;
     background-repeat: no-repeat;
 }
