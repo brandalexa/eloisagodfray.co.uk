@@ -36,6 +36,8 @@ html.dark-mode, p.dark-mode, a.dark-mode {
     article {
         margin-left: 2rem;
         margin-right: 2rem;
+        margin-top: 45vh;
+        transform: translateY(-50%);
     }
 
     h1 {
@@ -80,6 +82,18 @@ html.dark-mode, p.dark-mode, a.dark-mode {
 
 /*Tablet*/
 @media screen and (min-width: 768px) and (max-width: 1180px) {
+    @media screen and (min-height: 501px) {
+        article {
+            margin-top: 45vh;
+            transform: translateY(-50%);
+        }
+    }
+
+    @media screen and (max-height: 500px) {
+        article {
+            margin-top: 10vh;
+        }
+    }
     body {
         background-size: 60vw;
     }
@@ -107,7 +121,8 @@ html.dark-mode, p.dark-mode, a.dark-mode {
 /*Desktop*/
 @media screen and (min-width: 1181px) {
     article {
-        margin-top: 40vh;
+        margin-top: 45vh;
+        transform: translateY(-50%);
     }
 
     h1 {
@@ -180,12 +195,6 @@ body {
     66% {background-position: 51% 51%;}
     100% {background-position: 50% 50%;}
 }
-
-article {
-    margin-top: 50vh;
-    transform: translateY(-50%);
-}
-
 
 /*Text formatting*/
 html {
