@@ -169,7 +169,7 @@ body {
     width: 100vw;
     border: 1pt transparent solid;
     overflow: hidden;
-    animation-name: "background";
+    animation-name: background;
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
