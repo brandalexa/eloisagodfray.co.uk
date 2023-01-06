@@ -26,9 +26,8 @@ nav a.dark-mode {
 /*Navigation for Homepage and Work page*/
 nav {
     width: 100%;
-    position: fixed;
+    position: sticky;
     overflow: hidden;
-    position: fixed;
     padding: 1rem;
 }
 
@@ -45,9 +44,6 @@ nav ul li {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-top: 0.5rem;
-    padding-right: 0.5rem;
-    height: 1.25rem;
     column-gap: 4px;
 }
 
@@ -66,17 +62,64 @@ nav ul li {
     height: 100%;
 }
 
-
-/*Temporary solution to font sizes*/
-
-nav ul li {
-    font-size: 1.25rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
  nav ul li a {
     text-decoration: none;
+}
+
+/*Responsive Nav Sizes*/
+/*Mobile*/
+@media screen and (max-width: 767px) {
+    nav ul li {
+        font-size: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .colour-mode {
+        padding-top: 0.4rem;
+        height: 1rem;
+        padding-right: 1rem;
+    }
+
+    .colour-mode button {
+        height: 1rem;
+        width: 1.67rem;
+    }
+}
+
+/*Tablet*/
+@media screen and (min-width:768px) and (max-width: 1180px) {
+    nav ul li {
+        font-size: 1.15rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .colour-mode {
+        padding-top: 0.5rem;
+        height: 1.15rem;
+        padding-right: 1rem;
+    }
+
+    .colour-mode button {
+        height: 1.15rem;
+        width: 1.93rem;
+    }
+}
+
+/*Desktop*/
+@media screen and (min-width: 1181px) {
+    nav ul li {
+        font-size: 1.25rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .colour-mode {
+        padding-top: 0.5rem;
+        padding-right: 0.5rem;
+        height: 1.25rem;
+    }
 }
 
 /*Dark Mode*/
