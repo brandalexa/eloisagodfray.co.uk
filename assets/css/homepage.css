@@ -167,7 +167,7 @@ html {
 body {
     height: 100vh;
     width: 100vw;
-    border: 1pt transparent solid;
+    border: 0pt transparent solid;
     overflow: hidden;
     animation-name: background;
     animation-duration: 5s;
