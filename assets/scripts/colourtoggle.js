@@ -24,26 +24,19 @@ function changeIcon(mode) {
     document.getElementById("toggle-image").setAttribute("src", "/eloisagodfray.co.uk/assets/images/icons/toggle-".concat(mode).concat(".svg"));
 }
 
+function changeFavicon(mode) {
+    document.querySelector("link[rel='icon']").setAttribute("href", "/eloisagodfray.co.uk/assets/images/icons/favicon-".concat(mode).concat(".png"));
+}
+
 function toggleAll(mode) {
-    toggleName(mode, "h1");
-    toggleName(mode, "h2");
-    toggleName(mode, "h3");
-    toggleName(mode, "h4");
-    toggleName(mode, "h5");
-    toggleName(mode, "h6");
-    toggleName(mode, "li");
-    toggleName(mode, "p");
-    toggleName(mode, "html");
-    toggleName(mode, "body");
-    toggleName(mode, "button");
-    toggleName(mode, "th");
-    toggleName(mode, "td");
-    toggleName(mode, "tr");
-    toggleName(mode, "a");
-    toggleID(mode, "star");
-    toggleID(mode, "toggle-image");
-    toggleID(mode, "light-icon");
-    toggleID(mode, "dark-icon");
+    let names = ["h1", "h2", "h3", "h4", "h5", "h6", "li", "p", "html", "body", "button", "th", "td", "tr", "a"];
+    let ids = ["star", "toggle-image", "light-icon", "dark-icon"];
+
+    for (let i = 0; i < names.length; i++)
+        toggleName(mode, names[i]);
+
+    for (let i = 0; i < ids.length; i++)
+        toggleID(mode, ids[i]);
 }
 
 function toggleName(mode, name) {
@@ -66,10 +59,12 @@ function checkColourMode() {
     if (colourMode == "light") {
         toggleAll("light");
         changeIcon("light");
+        changeFavicon("light");
     }
     else if (colourMode == "dark") {
         toggleAll("dark");
         changeIcon("dark");
+        changeFavicon("dark");
     }
 
     else if (colourMode == "auto") {
@@ -77,16 +72,19 @@ function checkColourMode() {
         if (mode.matches) {
             toggleAll("light");
             changeIcon("light");
+            changeFavicon("light");
         }
         else if (!mode.matches) {
             toggleAll("dark");
             changeIcon("dark");
+            changeFavicon("dark");
         }
     }
 
     else {
         toggleAll("light");
         changeIcon("light");
+        changeFavicon("light");
     }
 }
 
@@ -100,7 +98,10 @@ function overrideColourMode() {
         setCookie("colourMode", "light", 365);
     }
     else {
-        setCookie("colourMode", "light", 365);
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+            setCookie("colourMode", "light", 365);
+        else if (window.matchMedia("(prefers-color-scheme: light)").matches)
+        setCookie("colourMode", "dark", 365);
     }
     checkColourMode();
 }
