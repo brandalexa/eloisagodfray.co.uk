@@ -25,7 +25,7 @@ nav a.dark-mode {
 
 /*Navigation for Homepage and Work page*/
 nav {
-    width: 100%;
+    width: calc(100%-1rem);
     position: sticky;
     overflow: hidden;
     padding: 1rem;
@@ -52,8 +52,6 @@ nav ul li {
 }
 
 .colour-mode button {
-    height: 1.6rem;
-    width: 2.68rem;
     background: none;
     cursor: pointer;
 }
@@ -78,7 +76,6 @@ nav ul li {
     .colour-mode {
         padding-top: 0.4rem;
         height: 1rem;
-        padding-right: 1rem;
     }
 
     .colour-mode button {
@@ -98,7 +95,6 @@ nav ul li {
     .colour-mode {
         padding-top: 0.5rem;
         height: 1.15rem;
-        padding-right: 1rem;
     }
 
     .colour-mode button {
@@ -117,8 +113,12 @@ nav ul li {
 
     .colour-mode {
         padding-top: 0.5rem;
-        padding-right: 0.5rem;
         height: 1.25rem;
+    }
+
+    .colour-mode button {
+        height: 1.6rem;
+        width: 2.68rem;
     }
 }
 
