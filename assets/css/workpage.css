@@ -48,7 +48,7 @@ tbody tr.dark-mode:hover {
     @media screen and (min-height:575px) {
         article {
             top: 50vh;
-            transform: translateY(-50%);
+            transform: translateY(calc(-50% - 2.5rem));
         }
     }
     #image {
@@ -76,27 +76,9 @@ tbody tr.dark-mode:hover {
     }
 
     .back img {
-        align-self: center;
-        margin-right: 0.5rem;
-    }
-
-    .back p {
-        align-self: baseline;
-        line-height: 2rem;
-    }
-
-    @supports (-webkit-text-size-adjust:none) and (not (-ms-ime-align:auto)) and (not (-moz-appearance:none)) {
-        .flexbox img {
-            align-self: center;
-            padding-top: 4pt;
-        }
-    }
-
-    /*WebKit Browsers*/
-    @supports (-webkit-appearance:none) {
-        .flexbox img {
-            padding-bottom: 5pt;
-        }
+        width: 0.8rem;
+        align-self: flex-end;
+        transform:translateY(-3px);
     }
 }
 
@@ -106,7 +88,7 @@ tbody tr.dark-mode:hover {
     @media screen and (min-height:740px) {
         article {
             top: 50vh;
-            transform: translateY(-50%);
+            transform: translateY(calc(-50% - 2.5rem));
         }
     }
     /*Hide images on mobile*/
@@ -141,7 +123,7 @@ tbody tr.dark-mode:hover {
     @media screen and (min-height:800px) {
         article {
             top: 50vh;
-            transform: translateY(-50%);
+            transform: translateY(calc(-50% - 2.5rem));
         }
     }
     /*Margins*/
@@ -249,7 +231,7 @@ a {
 
 /*Back Button*/
 .back {
-    align-items: center;
+    align-items: baseline;
     float: right;
     display: flex;
     flex-direction: row;

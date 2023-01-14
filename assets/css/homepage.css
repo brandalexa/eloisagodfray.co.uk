@@ -63,21 +63,6 @@ html.dark-mode, p.dark-mode, a.dark-mode {
         align-self: baseline;
         line-height: 2rem;
     }
-
-    /*iOS-Specific Padding for Star*/
-    @supports (-webkit-text-size-adjust:none) and (not (-ms-ime-align:auto)) and (not (-moz-appearance:none)) {
-        .flexbox img {
-            align-self: center;
-            padding-top: 4pt;
-        }
-    }
-
-    /*WebKit Browsers*/
-    @supports (-webkit-appearance:none) {
-        .flexbox img {
-            align-self: baseline;
-        }
-    }
 }
 
 /*Tablet*/
@@ -143,31 +128,16 @@ html.dark-mode, p.dark-mode, a.dark-mode {
     .flexbox p:hover ~ img {
         visibility: visible;
     }
-    
+
+    .flexbox {
+        gap: 1rem;
+        margin-right: 3rem;
+    }
+
     .flexbox img {
         width: 2rem;
         visibility: hidden;
-        margin-right: 22rem;
-    }
-
-    .flexbox p {
-        position: fixed;
-        align-self: center;
-    }
-
-    /*Safari Align*/
-    @media not all and (min-resolution:.001dpcm) { 
-        @supports (-webkit-appearance:none) and (stroke-color:transparent) {
-        .flexbox img { 
-            padding-top: 3pt;
-        }
-    }}
-
-    /*WebKit Browsers*/
-    @supports (-webkit-appearance:none) {
-        .flexbox img {
-            padding-top: -20pt;
-        }
+        transform: translateY(4px);
     }
 }
 
@@ -256,3 +226,11 @@ p a {
     justify-content: center;
     direction: rtl;
 }
+
+/* .flexbox p {
+    border: 1pt white solid;
+}
+
+.flexbox img {
+    border: 1pt white solid;
+} */

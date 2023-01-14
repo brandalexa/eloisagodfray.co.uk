@@ -52,7 +52,8 @@ nav ul li {
     display: flex;
     flex-direction: row;
     align-items: center;
-
+    margin-top: 5px;
+    direction: ltr;
 }
 
 .colour-mode:nth-child(1) img, .colour-mode:nth-child(3) img{
