@@ -54,6 +54,7 @@ nav ul li {
     align-items: center;
     margin-top: 5px;
     direction: ltr;
+    gap: 3px;
 }
 
 .colour-mode:nth-child(1) img, .colour-mode:nth-child(3) img{
