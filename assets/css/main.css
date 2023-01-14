@@ -31,12 +31,20 @@ nav {
     padding: 1rem;
 }
 
+nav ul {
+    display: flex;
+    align-items: center;
+    float: right;
+    direction: rtl;
+}
+
 nav ul li {
     display: inline;
     float: right;
     font-family: playfair-display, sans-serif;
     font-weight: 700;
     font-style: normal;
+
 }
 
 /*Colour Toggle*/
@@ -44,7 +52,7 @@ nav ul li {
     display: flex;
     flex-direction: row;
     align-items: center;
-    column-gap: 4px;
+
 }
 
 .colour-mode:nth-child(1) img, .colour-mode:nth-child(3) img{
@@ -74,13 +82,12 @@ nav ul li {
     }
 
     .colour-mode {
-        padding-top: 0.4rem;
         height: 1rem;
     }
 
     .colour-mode button {
-        height: 1rem;
-        width: 1.67rem;
+        height: 1.3rem;
+        width: 2.18rem;
     }
 }
 
@@ -93,13 +100,12 @@ nav ul li {
     }
 
     .colour-mode {
-        padding-top: 0.5rem;
         height: 1.15rem;
     }
 
     .colour-mode button {
-        height: 1.15rem;
-        width: 1.93rem;
+        height: 1.47rem;
+        width: 2.46rem;
     }
 }
 
@@ -112,7 +118,6 @@ nav ul li {
     }
 
     .colour-mode {
-        padding-top: 0.5rem;
         height: 1.25rem;
     }
 
