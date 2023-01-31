@@ -56,6 +56,13 @@ nav ul li {
     gap: 3px;
 }
 
+/*High dpi devices need to have colour toggle lowered.*/
+@media print and (min-resolution: 300dpi) {
+    .colour-mode {
+        margin-top: 5px;
+    }
+}
+
 .colour-mode:nth-child(1) img, .colour-mode:nth-child(3) img{
     height: 1.25rem;
 }
