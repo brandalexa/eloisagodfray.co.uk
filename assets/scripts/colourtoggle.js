@@ -21,11 +21,14 @@ function getCookie(cname) {
 }
 
 function changeIcon(mode) {
-    document.getElementById("toggle-image").setAttribute("src", "/eloisagodfray.co.uk/assets/images/icons/toggle-".concat(mode).concat(".svg"));
+    let toggleImg = document.getElementById("toggle-image");
+    if (toggleImg != null) {
+        toggleImg.setAttribute("src", "/assets/images/icons/toggle-".concat(mode).concat(".svg"));
+    }
 }
 
 function changeFavicon(mode) {
-    document.querySelector("link[rel='icon']").setAttribute("href", "/eloisagodfray.co.uk/assets/images/icons/favicon-".concat(mode).concat(".png"));
+    document.querySelector("link[rel='icon']").setAttribute("href", "/assets/images/icons/favicon-".concat(mode).concat(".png"));
 }
 
 function toggleAll(mode) {
@@ -107,14 +110,16 @@ function overrideColourMode() {
 }
 
 let deviceMode = window.matchMedia("(prefers-color-scheme: light)");
+let colourToggle = document.getElementById("colour-toggle");
 
 if (getCookie("colourMode") == null) {
     setCookie("colourMode", "auto", 365);
-    console.log("Auto cookie set.");
 }
 
 checkColourMode();
 
 deviceMode.addEventListener("change", () => { checkColourMode(); });
 
-document.getElementById("colour-toggle").addEventListener("click", () => { overrideColourMode(); });
+if (colourToggle != null) {
+    colourToggle.addEventListener("click", () => { overrideColourMode(); });
+}
