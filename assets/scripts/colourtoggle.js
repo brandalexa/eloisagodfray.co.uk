@@ -23,12 +23,12 @@ function getCookie(cname) {
 function changeIcon(mode) {
     let toggleImg = document.getElementById("toggle-image");
     if (toggleImg != null) {
-        toggleImg.setAttribute("src", "/assets/images/icons/toggle-".concat(mode).concat(".svg"));
+        toggleImg.setAttribute("src", "https://eloisagodfray.co.uk/assets/images/icons/toggle-".concat(mode).concat(".svg"));
     }
 }
 
 function changeFavicon(mode) {
-    document.querySelector("link[rel='icon']").setAttribute("href", "/assets/images/icons/favicon-".concat(mode).concat(".png"));
+    document.querySelector("link[rel='icon']").setAttribute("href", "https://eloisagodfray.co.uk/assets/images/icons/favicon-".concat(mode).concat(".png"));
 }
 
 function toggleAll(mode) {
