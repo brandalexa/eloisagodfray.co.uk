@@ -57,7 +57,7 @@ nav ul li {
 }
 
 /*High dpi devices need to have colour toggle lowered.*/
-@media print and (min-resolution: 192dpi) {
+@media screen and (min-resolution: 192dpi) {
     .colour-mode {
         margin-top: 5px;
     }
