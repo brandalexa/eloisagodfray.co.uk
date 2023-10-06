@@ -1,9 +1,42 @@
 @import url("https://use.typekit.net/fla6nuv.css");
 
+/*Only for beta versions!*/
+#version {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px black solid;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    animation: none;
+    color: black;
+    font-weight: bold;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+/*Animations*/
+@keyframes ease-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes ease-out {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
 body {
     font-family: pt-sans, sans-serif;
     font-weight: 400;
     font-style: normal;
+    animation-name: ease-in;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
 }
 
 /*Dark/Light Mode Toggle*/
@@ -56,6 +89,10 @@ nav ul li {
     gap: 3px;
 }
 
+.colour-toggle button img:hover {
+    filter:none;
+}
+
 /*High dpi devices need to have colour toggle lowered.*/
 @media screen and (min-resolution: 192dpi) {
     .colour-mode {
@@ -76,7 +113,14 @@ nav ul li {
     height: 100%;
 }
 
- nav ul li a {
+/*Transitions*/
+nav ul li a.dark-mode:hover {
+    color:#e65f46;
+    transition: 0.25s;
+    transition-timing-function: ease-in;
+}
+
+a {
     text-decoration: none;
 }
 
@@ -144,3 +188,16 @@ html.dark-mode {
 html.light-mode {
     background-color: rgb(248, 244, 255);
 }
+
+/* Custom Scrollbars
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background:rgb(248, 244, 255);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #222121;
+} */

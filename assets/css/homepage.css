@@ -1,7 +1,8 @@
 /*Light/Dark Mode*/
 /*Light Mode*/
 body.light-mode {
-    background: url(../images/background/eg-light.svg);
+    background: url(../images/background/eg-light.webp);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -16,7 +17,8 @@ html.light-mode, p.light-mode, a.light-mode {
 
 /*Dark Mode*/
 body.dark-mode {
-    background: url(../images/background/eg-dark.svg);
+    background: url(../images/background/eg-dark.webp);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -127,6 +129,9 @@ html.dark-mode, p.dark-mode, a.dark-mode {
     /*See my projects button*/
     .flexbox p:hover ~ img {
         visibility: visible;
+        opacity: 1;
+        transition: 0.1s;
+        transition-timing-function: ease-in;
     }
 
     .flexbox {
@@ -137,6 +142,9 @@ html.dark-mode, p.dark-mode, a.dark-mode {
     .flexbox img {
         width: 2rem;
         visibility: hidden;
+        opacity: 0;
+        transition: 0.1s;
+        transition-timing-function: ease-out;
         transform: translateY(4px);
     }
 }
@@ -152,8 +160,7 @@ html {
 body {
     height: 100vh;
     width: 100vw;
-    border: 0pt transparent solid;
-    overflow: hidden;
+
     animation-name: background;
     animation-duration: 5s;
     animation-iteration-count: infinite;

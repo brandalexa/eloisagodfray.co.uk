@@ -12,7 +12,8 @@ tbody tr td.light-mode {
 }
 
 tbody tr.light-mode:hover {
-    background: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.1s background-color ease-in;
 }
 
 #star.light-mode {
@@ -33,7 +34,8 @@ tbody tr td.dark-mode {
 }
 
 tbody tr.dark-mode:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: 0.1s background-color ease-in;
 }
 
 #star.dark-mode {
@@ -45,12 +47,13 @@ tbody tr.dark-mode:hover {
 /*Mobile*/
 @media screen and (max-width: 767px) {
     /*Add centralisation on non-limited-height*/
-    @media screen and (min-height:575px) {
+    @media screen and (min-height: 692px) {
         article {
             top: 50vh;
-            transform: translateY(calc(-50% - 2.5rem));
+            transform: translateY(calc(-55% - 2.5rem));
         }
     }
+
     #image {
         display: none;
     }
@@ -64,6 +67,7 @@ tbody tr.dark-mode:hover {
     article {
         margin-left: 2rem;
         margin-right: 2rem;
+        padding-bottom: 2rem;
     }
 
    /*Table Font Resizing*/
@@ -80,15 +84,19 @@ tbody tr.dark-mode:hover {
         align-self: flex-end;
         transform:translateY(-3px);
     }
+
+    .inactive {
+        display: none;
+    }
 }
 
 /*Tablet*/
 @media screen and (min-width: 768px) and (max-width: 1180px) {
     /*Add centralisation on non-limited-height*/
-    @media screen and (min-height:740px) {
+    @media screen and (min-height: 826px) {
         article {
             top: 50vh;
-            transform: translateY(calc(-50% - 2.5rem));
+            transform: translateY(calc(-55% - 2.5rem));
         }
     }
     /*Hide images on mobile*/
@@ -105,6 +113,7 @@ tbody tr.dark-mode:hover {
    article {
     margin-left: 3rem;
     margin-right: 3rem;
+    padding-bottom: 3rem;
    }
 
     /*Table Font Resizing*/
@@ -115,47 +124,85 @@ tbody tr.dark-mode:hover {
     td, tfoot{
         font-size: 1.5rem;
     }
+
+    .inactive {
+        display: none;
+    }
 }
 
 /*Desktop*/
 @media screen and (min-width: 1181px) {
     /*Add centralisation on non-limited-height*/
-    @media screen and (min-height:800px) {
+    @media screen and (min-height:791px) {
         article {
+            align-items: center;
             top: 50vh;
-            transform: translateY(calc(-50% - 2.5rem));
+            transform: translateY(calc(-50% - 1rem));
+            animation: ease-in 0.5s ease-in;
+        }
+
+        section:nth-child(2) {
+            margin-left: 4.5rem;
         }
     }
+
+    @media screen and (max-height: 791px) {
+        article > :first-child {
+            /* opacity: 0;
+            transition: opacity 0.4s ease-out; if you want to fade out instead */
+            margin: 0;
+            display: none;
+        }
+
+        section:nth-child(2) {
+            margin-left: 0;
+            animation: ease-in 0.5s ease-in;
+        }
+    }
+
     /*Margins*/
     article {
+        min-height: 40rem;
+        height: calc(100% - 10rem);
         margin-left: 4.5rem;
         margin-right: 4.5rem;
+        padding-bottom: 3rem;
     }
 
     /*Show images on desktop*/
-    #image {
-        background-color: #f9f1ee;
+    .active {
         opacity: 1;
         min-width: 400px;
         width: calc(50vw - 4rem);
         overflow-x: hidden;
         flex-direction: column;
+        display: inline;
+        /* transition: 0.1s;
+        transition-timing-function: ease-out; */
+    }
+
+    .inactive {
+        opacity: 0;
+        display: none;
     }
     
     section:nth-child(2) {
-        margin-left: 4.5rem;
         flex-grow: 1;
         flex-direction: column;
-        
     }
-
     /*Image appears on hover*/
     .back p:hover ~ img {
         visibility: visible;
+        opacity: 1;
+        transition: 0.1s;
+        transition-timing-function: ease-in;
     }
 
     .back img  {
         visibility: hidden;
+        opacity: 0;
+        transition: 0.1s;
+        transition-timing-function: ease-out;
     }
 
     /*Table Font Resizing*/
@@ -168,13 +215,18 @@ tbody tr.dark-mode:hover {
     }
 }
 
-
 /*Flexbox Properties*/
+html {
+    height: 100%;
 
+}
+body {
+    height: 100%;
+
+}
 article {
     display: flex;
     position: relative;
-    align-items: center;
 }
 
 /*Table Properties*/
@@ -210,6 +262,7 @@ td:nth-child(1) {
     font-family: playfair-display, serif;
     font-weight: 400;
     font-style: normal;
+    text-wrap: pretty;
 }
 
 td:nth-child(2) {
@@ -218,9 +271,10 @@ td:nth-child(2) {
     font-family: pt-sans, sans-serif;
     font-weight: 400;
     font-style: normal;
+    text-transform: uppercase;
 }
 
-tfoot th{
+tfoot th {
     margin-top: 1rem;
 }
 

@@ -62,16 +62,16 @@ h1.light-mode, h2.light-mode, h3.light-mode, li.light-mode, p.light-mode {
     }
 
     h3 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     p, li {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 }
 
 /*Desktop*/
-@media screen and (min-width: 1351px) and (max-width: 1999px) {
+@media screen and (min-width: 1351px) and (max-width: 1799px) {
     /*Margins*/
     article, header#image {
         margin: 2rem 24rem;
@@ -87,22 +87,19 @@ h1.light-mode, h2.light-mode, h3.light-mode, li.light-mode, p.light-mode {
     }
 
     h3 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     p, li {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 }
 
 /*Desktop Wide*/
-@media screen and (min-width: 2000px) {
+@media screen and (min-width: 1800px) {
+    /*Margins*/
     article, header#image {
-        margin: 2rem 36rem;
-    }
-
-    article, header#image {
-        margin: 2rem 24rem;
+        margin: 2rem 30rem;
     }
 
     /*Font Resizing*/
@@ -115,19 +112,19 @@ h1.light-mode, h2.light-mode, h3.light-mode, li.light-mode, p.light-mode {
     }
 
     h3 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     p, li {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 }
 
 
 /*Page Margins */
 article section {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 /*Images*/
@@ -146,7 +143,6 @@ h1 {
     font-family: playfair-display, sans-serif;
     font-weight: 900;
     font-style: normal;
-    text-transform: uppercase;
     margin-bottom: 0.5rem;
 }
 
@@ -154,7 +150,6 @@ h2 {
     font-family: playfair-display, sans-serif;
     font-weight: 700;
     font-style: normal;
-    text-transform: uppercase;
 }
 
 /*Sections*/
