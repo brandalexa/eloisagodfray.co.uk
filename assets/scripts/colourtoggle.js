@@ -8,27 +8,40 @@ function setCookie(name, value, expiryDays) {
 function getCookie(cname) {
     let name = cname + "=";
     let cookies = document.cookie.split(';');
+
     for (let i = 0; i < cookies.length; i++) {
         let cookie = cookies[i];
+
         while (cookie.charAt(0) == ' ') {
         cookie = cookie.substring(1);
         }
+
         if (cookie.indexOf(name) == 0) {
             return cookie.substring(name.length, cookie.length);
         }
-    }   
+    }
+    
     return null;
+}
+
+function changeWorkpageBackground(mode) {
+    let workpageBackground = document.getElementById("work-bg");
+
+    if (workpageBackground != null) {
+        workpageBackground.setAttribute("src", `../assets/images/background/eg-${mode}.webp`)
+    }
 }
 
 function changeIcon(mode) {
     let toggleImg = document.getElementById("toggle-image");
+
     if (toggleImg != null) {
-        toggleImg.setAttribute("src", "https://eloisagodfray.co.uk/assets/images/icons/toggle-".concat(mode).concat(".svg"));
+        toggleImg.setAttribute("src", `/assets/images/icons/toggle-${mode}.svg`);
     }
 }
 
 function changeFavicon(mode) {
-    document.querySelector("link[rel='icon']").setAttribute("href", "https://eloisagodfray.co.uk/assets/images/icons/favicon-".concat(mode).concat(".png"));
+    document.querySelector("link[rel='icon']").setAttribute("href", `/assets/images/icons/favicon-${mode}.png`);
 }
 
 function toggleAll(mode) {
@@ -40,19 +53,23 @@ function toggleAll(mode) {
 
     for (let i = 0; i < ids.length; i++)
         toggleID(mode, ids[i]);
+
+    changeWorkpageBackground(mode);
 }
 
 function toggleName(mode, name) {
     elements = document.getElementsByTagName(name);
+
     for (let i = 0; i < elements.length; i++) {
-        elements[i].setAttribute("class", mode.concat("-mode"));
+        elements[i].setAttribute("class", `${mode}-mode`);
     }
 }
 
 function toggleID(mode, id) {
     let element = document.getElementById(id);
+
     if (element != null){
-        element.setAttribute("class", mode.concat("-mode"));
+        element.setAttribute("class", `${mode}-mode`);
     }
 }
 
@@ -69,9 +86,9 @@ function checkColourMode() {
         changeIcon("dark");
         changeFavicon("dark");
     }
-
     else if (colourMode == "auto") {
         let mode = window.matchMedia("(prefers-color-scheme: light)");
+
         if (mode.matches) {
             toggleAll("light");
             changeIcon("light");
@@ -83,7 +100,6 @@ function checkColourMode() {
             changeFavicon("dark");
         }
     }
-
     else {
         toggleAll("light");
         changeIcon("light");
@@ -106,6 +122,7 @@ function overrideColourMode() {
         else if (window.matchMedia("(prefers-color-scheme: light)").matches)
         setCookie("colourMode", "dark", 365);
     }
+
     checkColourMode();
 }
 
