@@ -36,12 +36,12 @@ function changeIcon(mode) {
     let toggleImg = document.getElementById("toggle-image");
 
     if (toggleImg != null) {
-        toggleImg.setAttribute("src", `/assets/images/icons/toggle-${mode}.svg`);
+        toggleImg.setAttribute("src", `../assets/images/icons/toggle-${mode}.svg`);
     }
 }
 
 function changeFavicon(mode) {
-    document.querySelector("link[rel='icon']").setAttribute("href", `/assets/images/icons/favicon-${mode}.png`);
+    document.querySelector("link[rel='icon']").setAttribute("href", `../assets/images/icons/favicon-${mode}.png`);
 }
 
 function toggleAll(mode) {

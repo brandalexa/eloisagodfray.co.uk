@@ -22,7 +22,7 @@ function changeWorkpageBackground() {
     let workpageBackground = document.getElementById("work-bg");
 
     if (workpageBackground != null) {
-        workpageBackground.setAttribute("src", `../assets/images/background/eg-${mode}.webp`)
+        workpageBackground.setAttribute("src", `../assets/images/background/eg-${mode}-mono.webp`)
     }
 }
 
@@ -77,20 +77,12 @@ function loadImages() {
     }
 
     document.getElementById("hover-images").insertAdjacentHTML("afterbegin", `
-    <img alt="" id="work-bg" class="active" loading="eager" src="../assets/images/background/eg-${mode}.webp">
-    <img alt="" id="i0" class="inactive" loading="eager" src="../assets/images/hover/hover_0.webp">
-    <img alt="" id="i1" class="inactive" loading="eager" src="../assets/images/hover/hover_1.webp">
-    <img alt="" id="i2" class="inactive" loading="eager" src="../assets/images/hover/hover_2.webp">
-    <img alt="" id="i3" class="inactive" loading="eager" src="../assets/images/hover/hover_3.webp">
-    <img alt="" id="i4" class="inactive" loading="eager" src="../assets/images/hover/hover_4.webp">
-    <img alt="" id="i5" class="inactive" loading="eager" src="../assets/images/hover/hover_5.webp">
-    <img alt="" id="i6" class="inactive" loading="eager" src="../assets/images/hover/hover_6.webp">
-    <img alt="" id="i7" class="inactive" loading="eager" src="../assets/images/hover/hover_7.webp">
-    `);
+    <img alt="" id="work-bg" class="active" loading="eager" src="../assets/images/background/eg-${mode}-mono.webp">`);
 
     let images = [];
 
     for (let i = 0; i < NUMBER_OF_PAGES; i++) {
+        document.getElementById("hover-images").insertAdjacentHTML("beforeend", `<img alt="" id="i${i}" class="inactive" loading="eager" src="../assets/images/hover/hover_${i}.webp">`);
         let currentImage = document.querySelector(`#i${i}`);
         images.push(currentImage);
         currentImage.style.animation = "ease-in 0.3s ease-in";
