@@ -51,6 +51,7 @@ h1.light-mode, h2.light-mode, h3.light-mode, h4.light-mode, li.light-mode, p.lig
 #overview-right {
     flex-grow: 1;
     text-wrap: nowrap;
+    min-width: fit-content;
 }
 
 /*Article Section*/
