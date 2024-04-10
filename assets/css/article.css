@@ -36,10 +36,12 @@ h1.light-mode, h2.light-mode, h3.light-mode, h4.light-mode, li.light-mode, p.lig
     flex-direction: row;
     justify-content: space-between;
     column-gap: 2rem;
+    width: 100%;
 }
 
 #overview-left, #overview-right {
     flex-basis: 0;
+    width: 100%;
 }
 
 #overview-left {
