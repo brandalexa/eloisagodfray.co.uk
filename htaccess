@@ -3,7 +3,7 @@ Header set Cache-Control "public, max-age=1928448000"
 </FilesMatch>
 
 <FilesMatch "\.(html|css|js)$">
-Header set Cache-Control "public, max-age=604800"
+Header set Cache-Control "public, max-age=0, no-cache, no-store, must-revalidate"
 </FilesMatch>
 
 <Files .htaccess>
