@@ -61,7 +61,12 @@ function toggleName(mode, name) {
     elements = document.getElementsByTagName(name);
 
     for (let i = 0; i < elements.length; i++) {
-        elements[i].setAttribute("class", `${mode}-mode`);
+        let className = elements[i].getAttribute("class");
+        className = className == null ? "" : className;
+        console.log(elements[i]);
+        let preservedClassesString = className.replace(/dark-mode|light-mode/gi, "");
+        elements[i].setAttribute("class", `${preservedClassesString} ${mode}-mode`.trim());
+        console.log(elements[i].getAttribute("class"));
     }
 }
 
