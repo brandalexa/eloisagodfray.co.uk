@@ -1,6 +1,10 @@
+:root {
+    --overview-colour-light: rgb(243, 233, 254);
+}
+
 /*Dark Mode*/
 h1.dark-mode {
-    border-bottom: 1.5pt white solid;
+    border-bottom: 1pt white solid;
 }
 
 h1.dark-mode, h2.dark-mode, h3.dark-mode, li.dark-mode, p.dark-mode {
@@ -10,11 +14,27 @@ h1.dark-mode, h2.dark-mode, h3.dark-mode, li.dark-mode, p.dark-mode {
 
 /*Light Mode*/
 h1.light-mode {
-    border-bottom: 1.5pt black solid;
+    border-bottom: 1pt black solid;
 }
 
 h1.light-mode, h2.light-mode, h3.light-mode, li.light-mode, p.light-mode {
     color: black;
+}
+
+#overview {
+    background-color: var(--overview-colour-light);
+}
+
+#overview-columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* padding: 2rem 30rem; */
+}
+
+.aside {
+    align-self: flex-end;
+    flex-basis: 30%;
 }
 
 
@@ -23,8 +43,13 @@ h1.light-mode, h2.light-mode, h3.light-mode, li.light-mode, p.light-mode {
 /*Mobile*/
 @media screen and (max-width: 767px) {
     /*Margins*/
-    article, header#image {
+    #article-body, header#image, #header-margin-container {
         margin: 2rem 2rem;
+    }
+
+    /*Padding*/
+    #overview {
+        padding: 0.5rem 0rem;
     }
 
     /*Font Resizing*/
@@ -36,20 +61,34 @@ h1.light-mode, h2.light-mode, h3.light-mode, li.light-mode, p.light-mode {
         font-size: 1.9rem;
     }
 
-    h3 {
+    h3, h4.overview {
         font-size: 1.5rem;
     }
 
     p, li {
         font-size: 1rem;
     }
+
+    #overview-columns {
+        flex-direction: column;
+    }
+
+    #overview-right {
+        margin-top: 3rem;
+    }
+
 }
 
 /*Tablet*/
 @media screen and (min-width: 768px) and (max-width: 1350px) {
     /*Margins*/
-    article, header#image {
+    #article-body, header#image, #header-margin-container {
         margin: 2rem 8rem;
+    }
+
+    /*Padding*/
+    #overview {
+        padding: 1rem 0rem;
     }
 
     /*Font Resizing*/
@@ -61,7 +100,7 @@ h1.light-mode, h2.light-mode, h3.light-mode, li.light-mode, p.light-mode {
         font-size: 3rem;
     }
 
-    h3 {
+    h3, h4.overview {
         font-size: 2.2rem;
     }
 
@@ -73,8 +112,13 @@ h1.light-mode, h2.light-mode, h3.light-mode, li.light-mode, p.light-mode {
 /*Desktop*/
 @media screen and (min-width: 1351px) and (max-width: 1799px) {
     /*Margins*/
-    article, header#image {
+    #article-body, header#image, #header-margin-container {
         margin: 2rem 24rem;
+    }
+
+    /*Padding*/
+    #overview {
+        padding: 1rem 0rem;
     }
 
     /*Font Resizing*/
@@ -86,7 +130,7 @@ h1.light-mode, h2.light-mode, h3.light-mode, li.light-mode, p.light-mode {
         font-size: 3rem;
     }
 
-    h3 {
+    h3, h4.overview {
         font-size: 2.2rem;
     }
 
@@ -98,8 +142,13 @@ h1.light-mode, h2.light-mode, h3.light-mode, li.light-mode, p.light-mode {
 /*Desktop Wide*/
 @media screen and (min-width: 1800px) {
     /*Margins*/
-    article, header#image {
+    #article-body, header#image, #header-margin-container {
         margin: 2rem 30rem;
+    }
+
+    /*Padding*/
+    #overview {
+        padding: 1rem 0rem;
     }
 
     /*Font Resizing*/
@@ -111,7 +160,7 @@ h1.light-mode, h2.light-mode, h3.light-mode, li.light-mode, p.light-mode {
         font-size: 3rem;
     }
 
-    h3 {
+    h3, h4.overview {
         font-size: 2.2rem;
     }
 
@@ -120,11 +169,14 @@ h1.light-mode, h2.light-mode, h3.light-mode, li.light-mode, p.light-mode {
     }
 }
 
-
 /*Page Margins */
-article section {
+article, section#article-body, section.article-body{
     margin-top: 3rem;
     margin-bottom: 3rem;
+}
+
+section.overview {
+    margin-top: 3rem;
 }
 
 /*Images*/
@@ -143,23 +195,42 @@ h1 {
     font-family: playfair-display, sans-serif;
     font-weight: 900;
     font-style: normal;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
 }
 
 h2 {
     font-family: playfair-display, sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-style: normal;
+    margin-bottom: 2rem;
+}
+
+#overview-header {
+    margin-bottom: 2rem;
+    font-weight: 1000;
 }
 
 /*Sections*/
-h3 {
+h3, h4.overview {
     font-family: playfair-display, sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-style: normal;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 li {
+    list-style-position: inside;
+}
+
+.no-bullet-point {
     list-style-type: none;
+}
+
+.no-bullet-point > li {
+    margin-left: 0;
+}
+
+#overview-right {
+    min-width: 10rem;
 }
