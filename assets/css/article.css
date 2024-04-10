@@ -1,5 +1,6 @@
 :root {
     --overview-colour-light: rgb(243, 233, 254);
+    --overview-colour-dark: rgb(14, 37, 58);
 }
 
 /*Dark Mode*/
@@ -7,8 +8,12 @@ h1.dark-mode {
     border-bottom: 1pt white solid;
 }
 
-h1.dark-mode, h2.dark-mode, h3.dark-mode, li.dark-mode, p.dark-mode {
+h1.dark-mode, h2.dark-mode, h3.dark-mode, h4.dark-mode, li.dark-mode, p.dark-mode {
     color: white;
+}
+
+#overview.dark-mode {
+    background-color: var(--overview-colour-dark);
 }
 
 
@@ -17,26 +22,42 @@ h1.light-mode {
     border-bottom: 1pt black solid;
 }
 
-h1.light-mode, h2.light-mode, h3.light-mode, li.light-mode, p.light-mode {
+h1.light-mode, h2.light-mode, h3.light-mode, h4.light-mode, li.light-mode, p.light-mode {
     color: black;
 }
 
-#overview {
+#overview.light-mode {
     background-color: var(--overview-colour-light);
 }
 
+/*Project Overview*/
 #overview-columns {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* padding: 2rem 30rem; */
+    column-gap: 2rem;
 }
 
-.aside {
-    align-self: flex-end;
-    flex-basis: 30%;
+#overview-left, #overview-right {
+    flex-basis: 0;
 }
 
+#overview-left {
+    flex-grow: 10;
+}
+
+#overview-right {
+    flex-grow: 1;
+    text-wrap: nowrap;
+}
+
+/*Article Section*/
+h3, h4.overview {
+    font-family: playfair-display, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    margin-bottom: 1.5rem;
+}
 
 
 /*Responsive Design*/
@@ -211,16 +232,9 @@ h2 {
     font-weight: 1000;
 }
 
-/*Sections*/
-h3, h4.overview {
-    font-family: playfair-display, sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    margin-bottom: 1.5rem;
-}
-
 li {
-    list-style-position: inside;
+    list-style-position: outside;
+    margin-left: 1.5rem;
 }
 
 .no-bullet-point {
@@ -229,8 +243,4 @@ li {
 
 .no-bullet-point > li {
     margin-left: 0;
-}
-
-#overview-right {
-    min-width: 10rem;
 }

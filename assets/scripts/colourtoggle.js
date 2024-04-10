@@ -46,7 +46,7 @@ function changeFavicon(mode) {
 
 function toggleAll(mode) {
     let names = ["h1", "h2", "h3", "h4", "h5", "h6", "li", "p", "html", "body", "button", "th", "td", "tr", "a"];
-    let ids = ["star", "toggle-image", "light-icon", "dark-icon"];
+    let ids = ["star", "toggle-image", "light-icon", "dark-icon", "overview"];
 
     for (let i = 0; i < names.length; i++)
         toggleName(mode, names[i]);
