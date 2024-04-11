@@ -1,6 +1,17 @@
 :root {
     --overview-colour-light: rgb(243, 233, 254);
     --overview-colour-dark: rgb(14, 37, 58);
+    --shimmer-colour: #e65f46;
+}
+
+@keyframes shimmer-webkit {
+    from { -webkit-mask-position: 150%; }
+    to { -webkit-mask-position: -50%; }
+}
+
+@keyframes shimmer {
+    from { mask-position: 150%; }
+    to { mask-position: -50%; }
 }
 
 /*Dark Mode*/
@@ -14,6 +25,18 @@ h1.dark-mode, h2.dark-mode, h3.dark-mode, h4.dark-mode, li.dark-mode, p.dark-mod
 
 #overview.dark-mode {
     background-color: var(--overview-colour-dark);
+    -shimmer-colour: #e65f46;
+}
+
+#overview-header.dark-mode {
+    color: white;
+    padding: 0.2rem;
+    -webkit-mask-image: -webkit-linear-gradient(75deg, rgba(255,255,255,1) 30%, rgba(255,98,0,1) 43.3%, rgba(255,98,0,1) 56.7%, rgba(255,255,255,1) 70%);
+    mask-image: -webkit-linear-gradient(75deg, rgba(255,255,255,1) 30%, rgba(255,98,0,1) 43.3%, rgba(255,98,0,1) 56.7%, rgba(255,255,255,1) 70%);
+    -webkit-mask-size: 100rem;
+    mask-size: 100rem;
+    -webkit-animation: shimmer-webkit 2s linear infinite;
+    animation: shimmer 10s linear infinite;
 }
 
 
@@ -51,6 +74,7 @@ h1.light-mode, h2.light-mode, h3.light-mode, h4.light-mode, li.light-mode, p.lig
 #overview-right {
     flex-grow: 1;
     text-wrap: nowrap;
+    min-width: fit-content;
 }
 
 /*Article Section*/
