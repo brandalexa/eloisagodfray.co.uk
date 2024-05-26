@@ -14,54 +14,85 @@
     <title>EG - PUMA Elevated PDP</title>
 </head>
 <body>
+    <nav>
+        <ul class="desktop-link">
+            <li class="desktop-link" id="colour-toggle">
+                <div class="colour-mode">
+                    <img id="light-icon"alt="" src="../../assets/images/icons/light.svg">
+                    <button type="button" aria-label="Toggle website colour mode" id="colour-toggle"><img id="toggle-image" alt="" width="100%" height="100%" src="../../assets/images/icons/toggle-dark.svg"></button>
+                    <img id="dark-icon" alt="" src="../../assets/images/icons/dark.svg">
+                </div>
+            </li>
+            <li class="desktop-link" ><a href="mailto:contact@eloisagodfray.co.uk">Contact</a></li>
+            <li class="desktop-link" ><a target="_blank" href="https://www.linkedin.com/in/eloisa-godfray-b71343240">LinkedIn</a></li>
+            <li class="desktop-link" ><a href="../">Work</a></li>            
+            <li class="desktop-link" ><a href="../../">Home</a></li>
+        </ul>
+        <ul class="mobile-nav">
+            <div id="mobile-nav-bar">
+                <li class="mobile-only" id="menu-logo"><img id="menu-image" src="../../assets/images/background/eg-light.webp"></li>
+                <li class="mobile-only" id="menu-toggle"><button onclick="toggleMobileMenu()" id="menu-button" type="button" aria-label="Open navigation menu"><img width="100%" height="100%" src="../../assets/images/icons/menu.svg"></button></li>
+            </div>
+            <ul id="expanded-nav">
+                <li><a href="../../">Home</a></li>
+                <li><a href="../">Work</a></li>            
+                <li><a target="_blank" href="https://www.linkedin.com/in/eloisa-godfray-b71343240">LinkedIn</a></li>
+                <li><a href="mailto:contact@eloisagodfray.co.uk">Contact</a></li>
+            </ul>
+        </ul>
+    </nav>
     <header id="image">
         <img src="../../assets/images/hover/hover_7.webp">
     </header>
     <article>
-        <header id="overview">
-            <div id="header-margin-container">
+        <header>
+            <section id="titles">
                 <h1>Work</h1>
                 <h2>Project Name</h2>
-                <h3 id="overview-header">Project Overview</h3>
-                <div id="overview-columns">
-                    <section id="overview-left">
-                        <section>
-                            <h4 class="overview">Objective</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Erat nam at lectus urna duis. In eu mi bibendum neque egestas. Sit amet consectetur adipiscing elit duis tristique sollicitudin nibh sit. Etiam non quam lacus suspendisse faucibus interdum posuere lorem ipsum.</p>
+            </section>
+            <div id="overview">
+                <div id="header-margin-container">
+                    <h3>Project Overview</h3>
+                    <div id="overview-columns">
+                        <section id="overview-left">
+                            <section>
+                                <h4 class="overview">Objective</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Erat nam at lectus urna duis. In eu mi bibendum neque egestas. Sit amet consectetur adipiscing elit duis tristique sollicitudin nibh sit. Etiam non quam lacus suspendisse faucibus interdum posuere lorem ipsum.</p>
+                            </section>
+                            <section class="overview">
+                                <h4 class="overview">Goals</h4>
+                                <p>
+                                    <ul>
+                                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                        <li>Arcu ac tortor dignissim convallis aenean et tortor at risus.</li>
+                                        <li>Nullam non nisi est sit amet facilisis magna etiam tempor. Donec massa sapien faucibus et molestie.</li>
+                                    </ul>
+                                </p>
+                            </section>
+                            <section class="overview">
+                                <h4 class="overview">Complexities</h4>
+                                <p>
+                                    <ul>
+                                        <li>Complexity 1</li>
+                                        <li>Complexity 2</li>
+                                        <li>Complexity 3</li>
+                                    </ul>
+                                </p>
+                            </section>
                         </section>
-                        <section class="overview">
-                            <h4 class="overview">Goals</h4>
-                            <p>
-                                <ul>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                                    <li>Arcu ac tortor dignissim convallis aenean et tortor at risus.</li>
-                                    <li>Nullam non nisi est sit amet facilisis magna etiam tempor. Donec massa sapien faucibus et molestie.</li>
-                                </ul>
-                            </p>
+                        <section id="overview-right">
+                            <section>
+                                <h4 class="overview">Skills</h4>
+                                <p>
+                                    <ul class="no-bullet-point">
+                                        <li>Adobe After Effects</li>
+                                        <li>Adobe Illustrator</li>
+                                        <li>Adobe XD</li>
+                                    </ul>
+                                </p>
+                            </section>
                         </section>
-                        <section class="overview">
-                            <h4 class="overview">Complexities</h4>
-                            <p>
-                                <ul>
-                                    <li>Complexity 1</li>
-                                    <li>Complexity 2</li>
-                                    <li>Complexity 3</li>
-                                </ul>
-                            </p>
-                        </section>
-                    </section>
-                    <section id="overview-right">
-                        <section>
-                            <h4 class="overview">Skills</h4>
-                            <p>
-                                <ul class="no-bullet-point">
-                                    <li>Adobe After Effects</li>
-                                    <li>Adobe Illustrator</li>
-                                    <li>Adobe XD</li>
-                                </ul>
-                            </p>
-                        </section>
-                    </section>
+                    </div>
                 </div>
             </div>
         </header>
@@ -108,7 +139,7 @@
             </section>
             <section class="article-body live-demonstration">
                 <h3>Demo</h3>
-                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" 
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);"
                 width="100%" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fq1U9kMr2S1GGRzF9p3NYK2%2FApp-Prototype%3Fnode-id%3D89%253A23%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D89%253A525" allowfullscreen></iframe>
             </section>
             <section>
@@ -120,6 +151,7 @@
             </section>
         </section>
     </article>
+    <script src="../../assets/scripts/navigation.js"></script>
     <script src="../../assets/scripts/colourtoggle.js"></script>
     <script defer src="../../assets/scripts/beta.js"></script>
 </body>

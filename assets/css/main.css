@@ -1,5 +1,9 @@
 @import url("https://use.typekit.net/fla6nuv.css");
 
+:root {
+ --mobile-nav-height: 3.5rem;
+}
+
 /*Only for beta versions!*/
 #version {
     position: fixed;
@@ -40,7 +44,7 @@ body {
 }
 
 /*Dark/Light Mode Toggle*/
-nav ul li img.dark-mode, img#light-icon.dark-mode, img#dark-icon.dark-mode {
+nav ul li img.dark-mode, img#light-icon.dark-mode, img#dark-icon.dark-mode, #menu-button > img{
     filter: invert();
 }
 
@@ -58,26 +62,41 @@ nav a.dark-mode {
 
 /*Navigation for Homepage and Work page*/
 nav {
-    width: calc(100%-1rem);
-    position: sticky;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
     overflow: hidden;
     padding: 1rem;
+    background-color: rgba(248, 244, 255, 0.8);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    z-index: 10;
 }
 
-nav ul {
+nav.dark-mode {
+    background-color: rgba(10, 24, 36, 0.8);
+}
+
+nav ul.desktop-link {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    float: right;
     direction: rtl;
+    width: 100%;
+    /* border: 1pt solid yellow; */
 }
 
 nav ul li {
     display: inline;
-    float: right;
     font-family: playfair-display, sans-serif;
     font-weight: 700;
     font-style: normal;
 
+}
+
+nav + * {
+    padding-top: 2.5rem;
 }
 
 /*Colour Toggle*/
@@ -104,7 +123,7 @@ nav ul li {
     height: 1.25rem;
 }
 
-.colour-mode button {
+.colour-mode button, button#menu-button{
     background: none;
     cursor: pointer;
 }
@@ -124,9 +143,10 @@ a {
     text-decoration: none;
 }
 
-/*Responsive Nav Sizes*/
+/*Responsive Nav Layout*/
 /*Mobile*/
 @media screen and (max-width: 767px) {
+    /*To eventually be removed*/
     nav ul li {
         font-size: 1rem;
         padding-left: 1rem;
@@ -140,6 +160,93 @@ a {
     .colour-mode button {
         height: 1.3rem;
         width: 2.18rem;
+    }
+
+    /*New*/
+    .desktop-link {
+        display: none;
+    }
+
+    /* li#menu-logo {
+        border: 1pt rgb(0, 209, 66) solid;
+        flex-basis: 0;
+        flex-grow: 1;
+        text-align: left;
+    } */
+
+    nav {
+        padding: 0;
+    }
+
+    #mobile-nav-bar {
+        /* border: 1pt black solid; */
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+        justify-content: space-between;
+        height: var(--mobile-nav-height);
+        transition: height 0.5s ease-in-out;
+    }
+
+    #mobile-nav-bar > li {
+        display: flex;
+        /* border: 1pt black dotted; */
+        height: 100%;
+        align-items: center;
+    }
+    
+    #menu-image, #menu-button, #menu-button > img {
+        /* border: 1pt blue solid; */
+        height: 100%;
+    }
+
+    #mobile-nav-bar img { /*Temporary until we have a better hamburger icon*/
+        max-height: 2rem;
+    }
+
+    li#menu-logo > img {
+        /* height: 1.5rem; */
+        filter: saturate(0.5);
+    }
+
+    button#menu-button.light-mode > img {
+        filter: brightness(0);
+    }
+
+    /*Expanded navigation bar*/
+    #expanded-nav {
+        display: flex;
+        flex-direction: column;
+        direction: rtl;
+        height: 0;
+        overflow: hidden;
+        gap: 3rem;
+        /* border:#e65f46 solid; */
+        margin-top: 2rem;
+        transition: height 0.5s ease-in-out;
+
+    }
+
+    #expanded-nav + li {
+        padding-top: 3rem;
+    }
+
+    #expanded-nav > li {
+        font-size: 1.5rem;
+        font-weight: lighter;
+        padding-bottom: 1rem;
+        border-image-slice: 1;
+        border-width: 1pt;
+        border-style: solid;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-image-source: linear-gradient(90deg,  rgba(248, 244, 255, 0), rgba(0,0,0,1) 100%);;
+    }
+
+    #expanded-nav > li.dark-mode {
+        border-image-source: linear-gradient(90deg,  rgba(248, 244, 255, 0), rgb(255, 255, 255) 100%);;
+
     }
 }
 
@@ -159,6 +266,10 @@ a {
         height: 1.47rem;
         width: 2.46rem;
     }
+
+    .mobile-nav {
+        display: none;
+    }
 }
 
 /*Desktop*/
@@ -177,11 +288,15 @@ a {
         height: 1.6rem;
         width: 2.68rem;
     }
+
+    .mobile-nav {
+        display: none;
+    }
 }
 
 /*Dark Mode*/
 html.dark-mode {
-    background-color: rgb(6, 15, 23);
+    background-color: rgb(10, 24, 36);
 }
 
 /*Light Mode*/
@@ -201,3 +316,12 @@ html.light-mode {
 ::-webkit-scrollbar-thumb {
     background: #222121;
 } */
+
+/*Disable scrolling*/
+.disable-scroll {
+    overflow: hidden;
+}
+
+#expanded-nav {
+    display: none;
+}

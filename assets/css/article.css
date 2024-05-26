@@ -10,13 +10,26 @@
 } */
 
 @keyframes shimmer {
-    from { background-position: 150%; }
-    to { background-position: -50%; }
+    from { background-position: 200%; }
+    to { background-position: -200%; }
 }
 
 /*Dark Mode*/
 h1.dark-mode {
-    border-bottom: 1pt white solid;
+    position: relative;
+}
+
+h1:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1pt;
+    width: 100%;
+    background-image: linear-gradient(90deg, rgba(255,255,255,1) 30%, rgba(255,98,0,0) 43.3%, rgba(255,98,0,0) 56.7%, rgba(255,255,255,1) 70%);
+    background-size: 200rem;
+    background-repeat: repeat;
+    animation: shimmer 25s linear infinite;
 }
 
 h1.dark-mode, h2.dark-mode, h3.dark-mode, h4.dark-mode, li.dark-mode, p.dark-mode {
@@ -30,19 +43,13 @@ h1.dark-mode, h2.dark-mode, h3.dark-mode, h4.dark-mode, li.dark-mode, p.dark-mod
 
 #overview-header.dark-mode {
     color: transparent;
+    display: block;
     padding: 0.2rem;
     background-image: linear-gradient(75deg, rgba(255,255,255,1) 30%, rgba(255,98,0,1) 43.3%, rgba(255,98,0,1) 56.7%, rgba(255,255,255,1) 70%);
     background-size: 100rem;
     background-position: 0%;
     background-clip: text;
-    /* -webkit-mask-image: linear-gradient(75deg, rgba(255,255,255,1) 30%, rgba(255,98,0,1) 43.3%, rgba(255,98,0,1) 56.7%, rgba(255,255,255,1) 70%);
-    mask-image: linear-gradient(75deg, rgba(255,255,255,1) 30%, rgba(255,98,0,1) 43.3%, rgba(255,98,0,1) 56.7%, rgba(255,255,255,1) 70%);
-    -webkit-mask-size: cover;
-    mask-size: cover;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-animation: shimmer-webkit 2s linear infinite; */
-    animation: shimmer 25s linear infinite;
+    /* animation: shimmer 25s linear infinite; */
 }
 
 

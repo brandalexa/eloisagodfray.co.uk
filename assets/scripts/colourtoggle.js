@@ -28,7 +28,7 @@ function changeWorkpageBackground(mode) {
     let workpageBackground = document.getElementById("work-bg");
 
     if (workpageBackground != null) {
-        workpageBackground.setAttribute("src", `../assets/images/background/eg-${mode}.webp`)
+        workpageBackground.setAttribute("src", `/assets/images/background/eg-${mode}.webp`)
     }
 }
 
@@ -36,16 +36,24 @@ function changeIcon(mode) {
     let toggleImg = document.getElementById("toggle-image");
 
     if (toggleImg != null) {
-        toggleImg.setAttribute("src", `../assets/images/icons/toggle-${mode}.svg`);
+        toggleImg.setAttribute("src", `/assets/images/icons/toggle-${mode}.svg`);
     }
 }
 
 function changeFavicon(mode) {
-    document.querySelector("link[rel='icon']").setAttribute("href", `../assets/images/icons/favicon-${mode}.png`);
+    document.querySelector("link[rel='icon']").setAttribute("href", `/assets/images/icons/favicon-${mode}.png`);
+}
+
+function changeNavIcon(mode) {
+    let navIcon = document.getElementById("menu-image");
+
+    if (navIcon != null) {
+        navIcon.setAttribute("src", `/assets/images/background/eg-${mode}.webp`);
+    }
 }
 
 function toggleAll(mode) {
-    let names = ["h1", "h2", "h3", "h4", "h5", "h6", "li", "p", "html", "body", "button", "th", "td", "tr", "a"];
+    let names = ["nav", "h1", "h2", "h3", "h4", "h5", "h6", "li", "p", "html", "body", "button", "th", "td", "tr", "a"];
     let ids = ["star", "toggle-image", "light-icon", "dark-icon", "overview"];
 
     for (let i = 0; i < names.length; i++)
@@ -63,10 +71,8 @@ function toggleName(mode, name) {
     for (let i = 0; i < elements.length; i++) {
         let className = elements[i].getAttribute("class");
         className = className == null ? "" : className;
-        console.log(elements[i]);
         let preservedClassesString = className.replace(/dark-mode|light-mode/gi, "");
-        elements[i].setAttribute("class", `${preservedClassesString} ${mode}-mode`.trim());
-        console.log(elements[i].getAttribute("class"));
+        elements[i].setAttribute("class", `${preservedClassesString.trim()} ${mode}-mode`.trim());
     }
 }
 
@@ -85,11 +91,13 @@ function checkColourMode() {
         toggleAll("light");
         changeIcon("light");
         changeFavicon("light");
+        changeNavIcon("light");
     }
     else if (colourMode == "dark") {
         toggleAll("dark");
         changeIcon("dark");
         changeFavicon("dark");
+        changeNavIcon("dark");
     }
     else if (colourMode == "auto") {
         let mode = window.matchMedia("(prefers-color-scheme: light)");
@@ -98,17 +106,20 @@ function checkColourMode() {
             toggleAll("light");
             changeIcon("light");
             changeFavicon("light");
+            changeNavIcon("light");
         }
         else if (!mode.matches) {
             toggleAll("dark");
             changeIcon("dark");
             changeFavicon("dark");
+            changeNavIcon("dark");
         }
     }
     else {
         toggleAll("light");
         changeIcon("light");
         changeFavicon("light");
+        changeNavIcon("light");
     }
 }
 
