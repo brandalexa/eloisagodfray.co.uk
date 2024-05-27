@@ -3,8 +3,8 @@
 body.light-mode {
     background: url(../images/background/eg-light.webp);
     background-size: contain;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center center;
 }
 
 html.light-mode, p.light-mode, a.light-mode {
@@ -19,8 +19,8 @@ html.light-mode, p.light-mode, a.light-mode {
 body.dark-mode {
     background: url(../images/background/eg-dark.webp);
     background-size: contain;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center center;
 }
 
 html.dark-mode, p.dark-mode, a.dark-mode {
@@ -82,7 +82,7 @@ html.dark-mode, p.dark-mode, a.dark-mode {
         }
     }
     body {
-        background-size: 60vw;
+        /* background-size: 60vw; */
     }
 
     h1 {
@@ -150,14 +150,15 @@ html.dark-mode, p.dark-mode, a.dark-mode {
 }
 
 /*Background*/
-html {
-    background-position: center;
-    background-size: cover;
-    background-repeat: repeat;
-    background-attachment: fixed;
+body {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    width: 100vw;
 }
 
-body {
+/* body {
     height: 100vh;
     width: 100vw;
 
@@ -171,7 +172,7 @@ body {
     33% {background-position: 49% 49%;}
     66% {background-position: 51% 51%;}
     100% {background-position: 50% 50%;}
-}
+} */
 
 /*Text formatting*/
 html {

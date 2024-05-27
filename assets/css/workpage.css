@@ -148,12 +148,9 @@ tbody tr.dark-mode:hover {
             height: 100vh;
             /* border: 1pt solid red; */
             top: 2.25rem;
+            transform: translateY(calc(-50vh));
             animation: ease-in 0.5s ease-in;
             margin-bottom: 4rem;
-        }
-
-        section:nth-child(1) {
-            border: 1pt green solid;
         }
     }
 
