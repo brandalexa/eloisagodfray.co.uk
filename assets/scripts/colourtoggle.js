@@ -41,7 +41,7 @@ function changeIcon(mode) {
 }
 
 function changeFavicon(mode) {
-    document.querySelector("link[rel='icon']").setAttribute("href", `../assets/images/icons/favicon-${mode}.png`);
+    document.querySelector("link[rel='icon']").setAttribute("href", `/assets/images/icons/favicon-${mode}.png`);
 }
 
 function toggleAll(mode) {

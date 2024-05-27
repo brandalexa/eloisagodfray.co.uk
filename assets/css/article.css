@@ -1,108 +1,30 @@
-:root {
-    --overview-colour-light: rgb(243, 233, 254);
-    --overview-colour-dark: rgb(14, 37, 58);
-    --shimmer-colour: #e65f46;
-}
-
-/* @keyframes shimmer-webkit {
-    from { -webkit-mask-position: 150%; }
-    to { -webkit-mask-position: -50%; }
-} */
-
-@keyframes shimmer {
-    from { background-position: 150%; }
-    to { background-position: -50%; }
-}
-
 /*Dark Mode*/
 h1.dark-mode {
-    border-bottom: 1pt white solid;
+    border-bottom: 1.5pt white solid;
 }
 
-h1.dark-mode, h2.dark-mode, h3.dark-mode, h4.dark-mode, li.dark-mode, p.dark-mode {
+h1.dark-mode, h2.dark-mode, h3.dark-mode, li.dark-mode, p.dark-mode {
     color: white;
-}
-
-#overview.dark-mode {
-    background-color: var(--overview-colour-dark);
-    -shimmer-colour: #e65f46;
-}
-
-#overview-header.dark-mode {
-    color: transparent;
-    padding: 0.2rem;
-    background-image: linear-gradient(75deg, rgba(255,255,255,1) 30%, rgba(255,98,0,1) 43.3%, rgba(255,98,0,1) 56.7%, rgba(255,255,255,1) 70%);
-    background-size: 100rem;
-    background-position: 0%;
-    background-clip: text;
-    /* -webkit-mask-image: linear-gradient(75deg, rgba(255,255,255,1) 30%, rgba(255,98,0,1) 43.3%, rgba(255,98,0,1) 56.7%, rgba(255,255,255,1) 70%);
-    mask-image: linear-gradient(75deg, rgba(255,255,255,1) 30%, rgba(255,98,0,1) 43.3%, rgba(255,98,0,1) 56.7%, rgba(255,255,255,1) 70%);
-    -webkit-mask-size: cover;
-    mask-size: cover;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-animation: shimmer-webkit 2s linear infinite; */
-    animation: shimmer 25s linear infinite;
 }
 
 
 /*Light Mode*/
 h1.light-mode {
-    border-bottom: 1pt black solid;
+    border-bottom: 1.5pt black solid;
 }
 
-h1.light-mode, h2.light-mode, h3.light-mode, h4.light-mode, li.light-mode, p.light-mode {
+h1.light-mode, h2.light-mode, h3.light-mode, li.light-mode, p.light-mode {
     color: black;
 }
 
-#overview.light-mode {
-    background-color: var(--overview-colour-light);
-}
-
-/*Project Overview*/
-#overview-columns {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    column-gap: 2rem;
-    width: 100%;
-}
-
-#overview-left, #overview-right {
-    flex-basis: 0;
-    width: 100%;
-}
-
-#overview-left {
-    flex-grow: 10;
-}
-
-#overview-right {
-    flex-grow: 1;
-    text-wrap: nowrap;
-    min-width: fit-content;
-}
-
-/*Article Section*/
-h3, h4.overview {
-    font-family: playfair-display, sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    margin-bottom: 1.5rem;
-}
 
 
 /*Responsive Design*/
 /*Mobile*/
 @media screen and (max-width: 767px) {
     /*Margins*/
-    #article-body, header#image, #header-margin-container {
+    article, header#image {
         margin: 2rem 2rem;
-    }
-
-    /*Padding*/
-    #overview {
-        padding: 0.5rem 0rem;
     }
 
     /*Font Resizing*/
@@ -114,38 +36,20 @@ h3, h4.overview {
         font-size: 1.9rem;
     }
 
-    h3, h4.overview {
+    h3 {
         font-size: 1.5rem;
     }
 
     p, li {
         font-size: 1rem;
     }
-
-    #overview-columns {
-        flex-direction: column;
-    }
-
-    #overview-right {
-        margin-top: 3rem;
-    }
-
-    .live-demonstration {
-        display: none;
-    }
-
 }
 
 /*Tablet*/
 @media screen and (min-width: 768px) and (max-width: 1350px) {
     /*Margins*/
-    #article-body, header#image, #header-margin-container {
+    article, header#image {
         margin: 2rem 8rem;
-    }
-
-    /*Padding*/
-    #overview {
-        padding: 1rem 0rem;
     }
 
     /*Font Resizing*/
@@ -157,7 +61,7 @@ h3, h4.overview {
         font-size: 3rem;
     }
 
-    h3, h4.overview {
+    h3 {
         font-size: 2.2rem;
     }
 
@@ -169,13 +73,8 @@ h3, h4.overview {
 /*Desktop*/
 @media screen and (min-width: 1351px) and (max-width: 1799px) {
     /*Margins*/
-    #article-body, header#image, #header-margin-container {
+    article, header#image {
         margin: 2rem 24rem;
-    }
-
-    /*Padding*/
-    #overview {
-        padding: 1rem 0rem;
     }
 
     /*Font Resizing*/
@@ -187,7 +86,7 @@ h3, h4.overview {
         font-size: 3rem;
     }
 
-    h3, h4.overview {
+    h3 {
         font-size: 2.2rem;
     }
 
@@ -199,13 +98,8 @@ h3, h4.overview {
 /*Desktop Wide*/
 @media screen and (min-width: 1800px) {
     /*Margins*/
-    #article-body, header#image, #header-margin-container {
+    article, header#image {
         margin: 2rem 30rem;
-    }
-
-    /*Padding*/
-    #overview {
-        padding: 1rem 0rem;
     }
 
     /*Font Resizing*/
@@ -217,7 +111,7 @@ h3, h4.overview {
         font-size: 3rem;
     }
 
-    h3, h4.overview {
+    h3 {
         font-size: 2.2rem;
     }
 
@@ -226,14 +120,11 @@ h3, h4.overview {
     }
 }
 
+
 /*Page Margins */
-article, section#article-body, section.article-body{
+article section {
     margin-top: 3rem;
     margin-bottom: 3rem;
-}
-
-section.overview {
-    margin-top: 3rem;
 }
 
 /*Images*/
@@ -252,31 +143,23 @@ h1 {
     font-family: playfair-display, sans-serif;
     font-weight: 900;
     font-style: normal;
-    margin-bottom: 2.5rem;
-    text-transform: uppercase;
+    margin-bottom: 0.5rem;
 }
 
 h2 {
     font-family: playfair-display, sans-serif;
-    font-weight: 500;
+    font-weight: 700;
     font-style: normal;
-    margin-bottom: 2rem;
 }
 
-#overview-header {
-    margin-bottom: 2rem;
-    font-weight: 1000;
+/*Sections*/
+h3 {
+    font-family: playfair-display, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 1rem;
 }
 
 li {
-    list-style-position: outside;
-    margin-left: 1.5rem;
-}
-
-.no-bullet-point {
     list-style-type: none;
-}
-
-.no-bullet-point > li {
-    margin-left: 0;
 }
