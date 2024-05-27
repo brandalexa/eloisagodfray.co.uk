@@ -139,6 +139,12 @@ nav ul li a.dark-mode:hover {
     transition-timing-function: ease-in;
 }
 
+nav ul li a.light-mode:hover {
+    color: #c0a3ff;
+    transition: 0.25s;
+    transition-timing-function: ease-in;
+}
+
 a {
     text-decoration: none;
 }
@@ -252,6 +258,10 @@ a {
 
 /*Tablet*/
 @media screen and (min-width:768px) and (max-width: 1180px) {
+    nav ul {
+        float: right;
+    }
+
     nav ul li {
         font-size: 1.15rem;
         padding-left: 2rem;
@@ -274,6 +284,10 @@ a {
 
 /*Desktop*/
 @media screen and (min-width: 1181px) {
+    nav ul {
+        float: right;
+    }
+    
     nav ul li {
         font-size: 1.25rem;
         padding-left: 2rem;

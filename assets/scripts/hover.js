@@ -22,7 +22,7 @@ function changeWorkpageBackground() {
     let workpageBackground = document.getElementById("work-bg");
 
     if (workpageBackground != null) {
-        workpageBackground.setAttribute("src", `../assets/images/background/eg-${mode}-mono.webp`)
+        workpageBackground.setAttribute("src", `../assets/images/background/empty.webp`)
     }
 }
 
@@ -77,7 +77,7 @@ function loadImages() {
     }
 
     document.getElementById("hover-images").insertAdjacentHTML("afterbegin", `
-    <img alt="" id="work-bg" class="active" loading="eager" src="../assets/images/background/eg-${mode}-mono.webp">`);
+    <img alt="" id="work-bg" class="active" loading="eager" src="../assets/images/background/empty.webp">`);
 
     let images = [];
 

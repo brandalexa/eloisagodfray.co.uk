@@ -133,7 +133,7 @@ tbody tr.dark-mode:hover {
 /*Desktop*/
 @media screen and (min-width: 1181px) {
     /*Add centralisation on non-limited-height*/
-    @media screen and (min-height:791px) {
+    @media screen and (min-height:780px) {
         article {
             /* border: 1pt solid red; */
             align-items: center;
@@ -143,17 +143,21 @@ tbody tr.dark-mode:hover {
         }
     }
 
-    @media screen and (max-height:790px) {
+    @media screen and (max-height:779px) {
         article {
             height: 100vh;
             /* border: 1pt solid red; */
             top: 2.25rem;
+            /* transform: translateY(calc(-50vh)); */
             animation: ease-in 0.5s ease-in;
             margin-bottom: 4rem;
         }
 
-        section:nth-child(1) {
-            border: 1pt green solid;
+        #hover-images {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            overflow: hidden;
         }
     }
 
