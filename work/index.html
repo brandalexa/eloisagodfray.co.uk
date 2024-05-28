@@ -12,21 +12,34 @@
     <link rel="stylesheet" href="../assets/css/workpage.css">
     <link rel="icon" href="../assets/images/icons/favicon.png">
     <title>Eloisa Godfray - Work</title>
+    <script defer src="../assets/scripts/navigation.js"></script>
 </head>
 <body>
     <nav>
-        <ul>
-            <li>
+        <ul class="desktop-link">
+            <li class="desktop-link" id="colour-toggle">
                 <div class="colour-mode">
                     <img id="light-icon"alt="" src="../assets/images/icons/light.svg">
-                    <button type="button" aria-label="Toggle website colour mode" id="colour-toggle"><img id="toggle-image" alt="" width="100%" height="100%" src="../assets/images/icons/toggle-dark.svg"></button>
+                    <button type="button" aria-label="Toggle website colour mode" id="colour-toggle"><img id="toggle-image" alt="" width="100%" height="100%" src="../../assets/images/icons/toggle-dark.svg"></button>
                     <img id="dark-icon" alt="" src="../assets/images/icons/dark.svg">
                 </div>
             </li>
-            <li><a href="mailto:contact@eloisagodfray.co.uk">Contact</a></li>
-            <li><a target="_blank" href="https://www.linkedin.com/in/eloisa-godfray-b71343240">LinkedIn</a></li>
-            <li><a href="">Work</a></li>            
-            <li><a href="../">Home</a></li>
+            <li class="desktop-link" ><a href="mailto:contact@eloisagodfray.co.uk">Contact</a></li>
+            <li class="desktop-link" ><a target="_blank" href="https://www.linkedin.com/in/eloisa-godfray-b71343240">LinkedIn</a></li>
+            <li class="desktop-link" ><a href="">Work</a></li>            
+            <li class="desktop-link" ><a href="../">Home</a></li>
+        </ul>
+        <ul class="mobile-nav">
+            <div id="mobile-nav-bar">
+                <li class="mobile-only" id="menu-logo"><img id="menu-image" src="../assets/images/background/eg-light.webp"></li>
+                <li class="mobile-only" id="menu-toggle"><button onclick="toggleMobileMenu()" id="menu-button" type="button" aria-label="Open navigation menu"><img width="100%" height="100%" src="../../assets/images/icons/menu.svg"></button></li>
+            </div>
+            <ul id="expanded-nav">
+                <li><a href="../">Home</a></li>
+                <li><a href="">Work</a></li>            
+                <li><a target="_blank" href="https://www.linkedin.com/in/eloisa-godfray-b71343240">LinkedIn</a></li>
+                <li><a href="mailto:contact@eloisagodfray.co.uk">Contact</a></li>
+            </ul>
         </ul>
     </nav>
     <article class="flexbox">
