@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Adobe, Adobe InDesign, Adobe XD, Photoshop, InDesign, UAL, p5.js, UX, UI, User Experience, User Interface, Design, HTML, CSS, JavaScript">
+    <meta name="keywords" content="Figma, J.P Morgan, PUMA, Adobe, Adobe InDesign, Adobe XD, Photoshop, InDesign, UAL, p5.js, UX, UI, User Experience, User Interface, Design, HTML, CSS, JavaScript">
     <meta name="description" content="Hi, I&apos;m Eloisa, a UX Designer based in London. Come and check out my portfolio and recent projects here!">
     <meta name="author" content="Eloisa Godfray">
     <link rel="stylesheet" href="assets/css/reset.css">
@@ -24,46 +24,157 @@
     <script defer src="assets/scripts/navigation.js"></script>
 </head>
 <body>
-    <nav>
+    <nav id="nav-primary" aria-label="Primary Navigation">
+        <a id="nav-title-stack" aria-label="Homepage" href="/">
+            <span id="nav-title">Eloisa Godfray</span>
+            <span id="nav-subtitle">UX Designer</span>
+        </a>
+        
         <ul class="desktop-link">
-            <li class="desktop-link" id="colour-toggle">
-                <div class="colour-mode">
-                    <img id="light-icon"alt="" src="assets/images/icons/light.svg">
-                    <button type="button" aria-label="Toggle website colour mode" id="colour-toggle"><img id="toggle-image" alt="" width="100%" height="100%" src="../../assets/images/icons/toggle-dark.svg"></button>
-                    <img id="dark-icon" alt="" src="assets/images/icons/dark.svg">
-                </div>
-            </li>
+            <li class="desktop-link" ><a href="#">Work</a></li>            
+            <!-- <li class="desktop-link" ><a target="_blank" href="https://www.linkedin.com/in/eloisa-godfray-b71343240">LinkedIn</a></li> -->
+            <li><a href="#">About</a></li>
             <li class="desktop-link" ><a href="mailto:contact@eloisagodfray.co.uk">Contact</a></li>
-            <li class="desktop-link" ><a target="_blank" href="https://www.linkedin.com/in/eloisa-godfray-b71343240">LinkedIn</a></li>
-            <li class="desktop-link" ><a href="work">Work</a></li>            
-            <li class="desktop-link" ><a href="">Home</a></li>
         </ul>
-        <ul class="mobile-nav">
-            <div id="mobile-nav-bar">
-                <li class="mobile-only" id="menu-logo"><img id="menu-image" src="assets/images/background/eg-light.webp"></li>
-                <li class="mobile-only" id="menu-toggle"><button onclick="toggleMobileMenu()" id="menu-button" type="button" aria-label="Open navigation menu"><img width="100%" height="100%" src="../../assets/images/icons/menu.svg"></button></li>
-            </div>
-            <ul id="expanded-nav">
-                <li><a href="">Home</a></li>
-                <li><a href="work">Work</a></li>            
-                <li><a target="_blank" href="https://www.linkedin.com/in/eloisa-godfray-b71343240">LinkedIn</a></li>
-                <li><a href="mailto:contact@eloisagodfray.co.uk">Contact</a></li>
-            </ul>
-        </ul>
-    </nav>
-    <article>
-        <h1>
-            Hey, my name is Eloisa
-        </h1>
-        <h2>
-            I&apos;m a UX Designer
-        </h2>
-        <div class="flexbox">
-            <p><a href="work">Explore my work</a></p>
-            <img id="star" height="100%" alt="A minimalistic image of a star for aesthetic effect" src="assets/images/icons/star.svg">
+        
+        <div class="colour-mode" id="theme-selector">
+            <!-- <img id="light-icon"alt="" src="../../assets/images/icons/light.svg"> -->
+            <svg id="light-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ai ai-Sun"><path d="M12 3V2m0 20v-1m9-9h1M2 12h1m15.5-6.5L20 4M4 20l1.5-1.5M4 4l1.5 1.5m13 13L20 20"/><circle cx="12" cy="12" r="4"/></svg>
+            <button type="button" aria-label="Toggle website colour mode" id="colour-toggle"><img id="toggle-image" alt="" width="100%" height="100%" src="../../assets/images/icons/toggle-dark.svg"></button>
+            <!-- <img id="dark-icon" alt="" src="../../assets/images/icons/dark.svg"> -->
+            <svg id="dark-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ai ai-Moon"><path d="M20.958 15.325c.204-.486-.379-.9-.868-.684a7.684 7.684 0 0 1-3.101.648c-4.185 0-7.577-3.324-7.577-7.425a7.28 7.28 0 0 1 1.134-3.91c.284-.448-.057-1.068-.577-.936C5.96 4.041 3 7.613 3 11.862 3 16.909 7.175 21 12.326 21c3.9 0 7.24-2.345 8.632-5.675z"/><path d="M15.611 3.103c-.53-.354-1.162.278-.809.808l.63.945a2.332 2.332 0 0 1 0 2.588l-.63.945c-.353.53.28 1.162.81.808l.944-.63a2.332 2.332 0 0 1 2.588 0l.945.63c.53.354 1.162-.278.808-.808l-.63-.945a2.332 2.332 0 0 1 0-2.588l.63-.945c.354-.53-.278-1.162-.809-.808l-.944.63a2.332 2.332 0 0 1-2.588 0l-.945-.63z"/></svg>
         </div>
-    </article>
+    </nav>
+    <header id="hero">
+        <h1>Eloisa Godfray</h1>
+        <p>I&apos;m a UX Designer based in London currently working at J.P.Morgan</p>
+    </header>
+    <main>
+        <section id="showcase">
+            <p>Image grid will go here.</p>
+        </section>
+        <section id="work-section">
+            <div id="work-hover-images">
+                <a href="#" class="work-card" data-card="puma-design" style="background-image: url(/assets/images/hover/hover_6.webp);">
+                    <div class="work-info">
+                        <h3 class="work-title">PUMA Design System</h3>
+                        <p class="work-year">2022 | Infographic</p>
+                        <p class="work-description">A visual system mapping the structure and style of PUMA’s digital identity.</p>
+                    </div>
+                </a>
+                <a href="#" class="work-card" data-card="puma-pdp" style="background-image: url(/assets/images/hover/hover_7.webp);">
+                    <div class="work-info">
+                        <h3 class="work-title">PUMA Elevated PDP</h3>
+                        <p class="work-year">2022 | UX/UI</p>
+                        <p class="work-description">An elevated PDP for PUMA that enhances UX and visual storytelling for limited-edition products.</p>
+                    </div>
+                </a>
+                <a href="#" class="work-card" data-card="mozilla-game" style="background-image: url(/assets/images/hover/hover_0.webp);">
+                    <div class="work-info">
+                        <h3 class="work-title">Mozilla Internet Health Game</h3>
+                        <p class="work-year">2021 | UX/UI</p>
+                        <p class="work-description">An educational UX/UI concept promoting internet health through gamification.</p>
+                    </div>
+                </a>
+                  
+                <a href="#" class="work-card" data-card="berlin-emigration" style="background-image: url(/assets/images/hover/hover_1.webp);">
+                    <div class="work-info">
+                        <h3 class="work-title">Emigration in Berlin</h3>
+                        <p class="work-year">2020 | Infographic</p>
+                        <p class="work-description">A data-driven visual narrative illustrating emigration patterns in Berlin.</p>
+                    </div>
+                </a>
+                  
+                <a href="#" class="work-card" data-card="app-eyetracking" style="background-image: url(/assets/images/hover/hover_2.webp);">
+                    <div class="work-info">
+                        <h3 class="work-title">DB App Eyetracking</h3>
+                        <p class="work-year">2022 | UX</p>
+                        <p class="work-description">An eyetracking-based usability study for the Deutsche Bahn mobile app, highlighting key interaction pain points.</p>
+                    </div>
+                </a>
+                <a href="#" class="work-card" data-card="drawing-system" style="background-image: url(/assets/images/hover/hover_3.webp);">
+                    <div class="work-info">
+                        <h3 class="work-title">p5.js Drawing System</h3>
+                        <p class="work-year">2021 | Code</p>
+                        <p class="work-description">Interactive p5.js artwork reflecting personal and social responses to the COVID-19 lockdown.</p>
+                    </div>
+                </a>
+                <a href="#" class="work-card" data-card="amazon-archive" style="background-image: url(/assets/images/hover/hover_4.webp);">
+                    <div class="work-info">
+                        <h3 class="work-title">Amazon Rainforest Archive</h3>
+                        <p class="work-year">2021 | UX/UI</p>
+                        <p class="work-description">A digital archive concept for documenting the ecological and cultural legacy of the Amazon rainforest.</p>
+                    </div>
+                </a>
+                <a href="#" class="work-card" data-card="game-memorial" style="background-image: url(/assets/images/hover/hover_5.webp);">
+                <div class="work-info">
+                    <h3 class="work-title">Video Game Memorial</h3>
+                    <p class="work-year">2021 | UX/UI</p>
+                    <p class="work-description">A memorial-style site design exploring the cultural impact of lost and discontinued video games.</p>
+                </div>
+                </a>
+            </div>
+
+            <nav id="nav-projects" aria-labelledby="work-section-heading">
+                <header>
+                    <h2 id="work-section-heading">Work</h2>
+                </header>
+
+                <ul id="work-links">
+                    <li>
+                        <a href="#" data-card="puma-design" class="project-link">
+                            <span class="project-title">PUMA Design System</span>
+                            <span class="project-type">Infographic</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-card="puma-pdp" class="project-link">
+                            <span class="project-title">PUMA Elevated PDP</span>
+                            <span class="project-type">UX/UI</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-card="mozilla-game" class="project-link">
+                            <span class="project-title">Mozilla Internet Health Game</span>
+                            <span class="project-type">UX/UI</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-card="berlin-emigration" class="project-link">
+                            <span class="project-title">Emigration in Berlin</span>
+                            <span class="project-type">Infographic</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-card="app-eyetracking" class="project-link">
+                            <span class="project-title">DB App Eyetracking</span>
+                            <span class="project-type">UX</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-card="drawing-system" class="project-link">
+                            <span class="project-title">p5.js Drawing System</span>
+                            <span class="project-type">Code</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-card="amazon-archive" class="project-link">
+                            <span class="project-title">Amazon Rainforest Archive</span>
+                            <span class="project-type">UX/UI</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-card="game-memorial" class="project-link">
+                            <span class="project-title">Video Game Memorial</span>
+                            <span class="project-type">UX/UI</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </main>
     <script src="assets/scripts/colourtoggle.js"></script>
     <script defer src="assets/scripts/beta.js"></script>
+    <script defer src="assets/scripts/work-hover.js"></script>
 </body>
 </html>
