@@ -61,50 +61,49 @@
 /* WORK AND PROJECTS NAVIGATOR */
 #work-section {
     /* Will change to fit-content when fleshed out. */
-    padding: 4rem;
+    padding: 4rem 4rem 12rem 4rem;
     /* border: 1pt green solid; */
 
     display: flex;
     align-items: stretch;
     justify-content: flex-end;
     gap: 4rem;
-
 }
 
 #work-hover-images {
-    
     width: 50%;
     /* min-height: 25rem; */
 
     overflow: hidden;
-    border-radius: 32px;
+    border-radius: 10px;
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .work-card {
     height: 100%;
     width: 100%;
-    background-size: cover;
-    background-color: rgb(var(--color-primary));
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: forestgreen;
+    /* background-color: rgb(26, 26, 26); */
 
     display: flex;
     align-items: flex-end;
 
-    opacity: 0;
+    filter: opacity(0);
     pointer-events: none;
-    transition: opacity 0.4s ease-in-out;
+    transition: filter 0.4s ease-in-out;
 
     position: absolute;
     top: 0;
     left: 0;
 }
 
-.work-card.active {
-    opacity: 1;
+.work-card.active, .work-card.force-active {
+    filter: opacity(1);
     pointer-events: auto;
     /* z-index: 1; */
     order: 1;
@@ -120,9 +119,11 @@
     /* border: 1pt dotted aqua; */
     color: white;
 
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(20px);
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(10px);
     mask-image: linear-gradient(to bottom, transparent, black 10rem);
+    transform: translateZ(0);
+    will-change: transform, opacity;
 }
 
 
@@ -208,7 +209,7 @@
 
 }
 
-.project-link:hover {
+.project-link:hover, .project-link.force-active {
     background-color: rgba(var(--color-primary), 1);
     color: white;
 }
